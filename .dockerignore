@@ -1,0 +1,39 @@
+# ── Python runtime artifacts ───────────────────────────────
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# ── Environment & secrets — NEVER in image ─────────────────
+.env
+*.env.local
+
+# ── Tests — not needed at runtime ─────────────────────────
+tests/
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# ── Linting ────────────────────────────────────────────────
+.ruff_cache/
+
+# ── Git ────────────────────────────────────────────────────
+.git/
+.gitignore
+.github/
+
+# ── IDE & OS ───────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ── Docs & CI config — not needed in container ─────────────
+README.md
+Makefile
+*.md
