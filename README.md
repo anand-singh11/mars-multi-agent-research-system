@@ -176,4 +176,3 @@ pip install -r requirements.txt --upgrade
 - Graphviz is optional for visualization
 - The app will work without it
 - If needed, follow standard platform installation instructions.
-Hello and welcome to MARS created by Anand Raj Singh.
