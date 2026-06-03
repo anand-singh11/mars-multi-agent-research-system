@@ -127,6 +127,31 @@ Start → Supervisor → Researcher → Supervisor → Writer → Critiquer → 
                 └────────────────── (loop until approved) ──────────────┘
 ```
 
+## 🚀 Deployment to Railway
+
+You can deploy this Streamlit app to [Railway](https://railway.app/) using either of the following two options:
+
+### Option 1: Automatic GitHub Integration (Recommended)
+1. Go to [Railway.app](https://railway.app/) and create a new project.
+2. Select **"Deploy from GitHub repo"** and choose your repository `mars-multi-agent-research-system`.
+3. In the Railway service dashboard, navigate to **Settings** → **Build & Deploy**:
+   - Nixpacks will automatically detect Python and configure the build.
+   - The start command is read automatically from the `Procfile`:
+     ```bash
+     streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+     ```
+4. Navigate to **Variables** and add your production environment variables:
+   - `GROQ_API_KEY`: Your Groq API Key
+   - `TAVILY_API_KEY`: Your Tavily API Key
+5. Under **Settings** → **Networking**, click **"Generate Domain"** to get a public URL for your application.
+6. The app will build and deploy. Any subsequent pushes to the `main` branch will automatically trigger a new deployment.
+
+### Option 2: CI/CD Deployment via GitHub Actions
+If you prefer triggering deployments programmatically from your pipeline:
+1. Generate a **Project Token** in your Railway Project Settings.
+2. Add the token to your GitHub repository secrets as `RAILWAY_TOKEN` (**Settings → Secrets and variables → Actions → New repository secret**).
+3. Every push to the `main` branch will trigger the CD workflow (`.github/workflows/cd.yml`), executing the tests and automatically deploying to Railway via the Railway CLI.
+
 ##  Troubleshooting
 
 ### Common Issues
