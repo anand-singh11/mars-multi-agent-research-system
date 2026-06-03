@@ -1,48 +1,48 @@
-# ── Python ────────────────────────────────────────────────
+# Virtual Environments
 .venv/
+env/
+venv/
+ENV/
+
+# Python compiler caches and packages
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
-*.egg-info/
-*.egg
-.eggs/
-dist/
 build/
 develop-eggs/
+dist/
 downloads/
 eggs/
+.eggs/
 lib/
 lib64/
 parts/
 sdist/
 var/
+*.egg-info/
 .installed.cfg
+*.egg
 
-# ── Environment & Secrets ─────────────────────────────────
+# Environment variables and secrets
 .env
-*.env.local
+.env.*
+!.env.example
 
-# ── Testing & Coverage ────────────────────────────────────
+# Testing and coverage
 .pytest_cache/
 .coverage
 htmlcov/
 coverage.xml
-
-# ── Linting ───────────────────────────────────────────────
 .ruff_cache/
 
-# ── Logs ──────────────────────────────────────────────────
-*.log
-logs/
-
-# ── IDE ───────────────────────────────────────────────────
+# IDEs and Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# ── OS ────────────────────────────────────────────────────
+# OS files
 .DS_Store
 Thumbs.db
